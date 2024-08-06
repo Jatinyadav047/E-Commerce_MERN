@@ -13,6 +13,8 @@ body{
     width : 20%;
     text-align : center;
     font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
 }
 .search-bar{
     width : 60%;
@@ -29,6 +31,8 @@ input::placeholder{
     width : 20%;
     font-weight: bolder;
     font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
 }
 .nav-bar-wrapper{
 display: flex;
