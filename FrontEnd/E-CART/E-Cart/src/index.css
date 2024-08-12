@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(80, 80, 80);
+    background-color:rgb(80, 80, 80);
 }
 .nav-bar{
     display:flex;
@@ -41,4 +41,19 @@ padding: 15px;
 background-color: blueviolet;
 color: white;
 font-weight: bold ;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img img{
+    width: 350px;
+    height: 350px;
+}
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
 }

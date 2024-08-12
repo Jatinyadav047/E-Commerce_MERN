@@ -1,33 +1,67 @@
-import React from 'react'
-import{Link} from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { items } from "./Data";
 
-
-const Navbar = () => {
+const Navbar = ({ setData }) => {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("")
+  const filterByCategory = (category) => {
+    const element = items.filter((product) => product.category === category);
+    setData(element);
+  };
+  const filterByPrice = (price)=>{
+    const element = items.filter((product)=>product.price >=price);
+    setData(element)
+  }
+  const handleSumbit = (e)=>{
+    e.preventDefault();
+    navigate(`/search/${searchTerm}`)
+    setSearchTerm("")
+  }
   return (
     <>
-    <header>
+      <header className="sticky-top">
         <div className="nav-bar">
-            <Link to={'/'} className="brand">E-Cart</Link>
-            <div className="search-bar">
-                <input type="text"  placeholder='Search Products'/>
-            </div>
-            <Link to={'/cart'} className="cart">Cart</Link>
+          <Link to={"/"} className="brand">
+            E-Cart
+          </Link>
+
+          <form 
+          onSubmit={handleSumbit}
+          className="search-bar">
+            <input
+            value = {searchTerm}
+            onChange = {(e)=> setSearchTerm(e.target.value)} 
+            type="text" 
+            placeholder="Search Products" />
+          </form>
+
+          <Link to={"/cart"} className="cart">
+            Cart
+          </Link>
         </div>
         <div className="nav-bar-wrapper">
           <div className="items">Filter By {"->"}</div>
-          <div className="items">No Filter</div>
-          <div className="items">Mobiles</div>
-          <div className="items">Laptops</div>
-          <div className="items">Tablets</div>
-          <div className="items">{">="} 29999</div>
-          <div className="items">{">="} 49999</div>
-          <div className="items">{">="} 59999</div>
-          <div className="items">{">="} 69999</div>
+          <div onClick={() => setData(items)} className="items">
+            No Filter
+          </div>
+          <div onClick={() => filterByCategory("mobiles")} className="items">
+            Mobiles
+          </div>
+          <div onClick={() => filterByCategory("laptops")} className="items">
+            Laptops
+          </div>
+          <div onClick={() => filterByCategory("tablets")} className="items">
+            Tablets
+          </div>
+          <div onClick={()=>filterByPrice(29999)} className="items">{">="} 29999</div>
+          <div onClick={()=>filterByPrice(49999)} className="items">{">="} 49999</div>
+          <div onClick={()=>filterByPrice(69999)} className="items">{">="} 69999</div>
+          <div onClick={()=>filterByPrice(89999)} className="items">{">="} 89999</div>
         </div>
-    </header>
+      </header>
     </>
-    
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
