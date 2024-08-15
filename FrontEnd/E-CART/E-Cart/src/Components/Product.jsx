@@ -40,7 +40,7 @@ const Product = ({ items, cart, setCart }) => {
         theme="colored"
       />
       <div className="contaner my-5 mx-5">
-        <div className="row">
+        <div className="row mx-5">
           {items.map((product) => {
             return (
               <>

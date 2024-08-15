@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { items } from "./Data";
 import { FaCartShopping } from "react-icons/fa6";
+import { IoHomeSharp } from "react-icons/io5";
 
 const Navbar = ({ setData, cart }) => {
   const location = useLocation();
@@ -25,7 +26,7 @@ const Navbar = ({ setData, cart }) => {
       <header className="sticky-top">
         <div className="nav-bar">
           <Link to={"/"} className="brand">
-            E-Cart
+          <IoHomeSharp style={{ fontSize: "2 rem" }} />
           </Link>
 
           <form onSubmit={handleSumbit} className="search-bar">

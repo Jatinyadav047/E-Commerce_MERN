@@ -1,10 +1,10 @@
 body{
-    background-color:rgb(80, 80, 80);
+    background-color: #E2DAD6;
 }
 .nav-bar{
     display:flex;
     justify-content: space-between;
-    background-color: blue;
+    background-color: #36547e;
     color: antiquewhite;
     padding: 10px;
 }
@@ -38,7 +38,7 @@ input::placeholder{
 display: flex;
 justify-content: space-between;
 padding: 15px;
-background-color: blueviolet;
+background-color:#7FA1C3;
 color: white;
 font-weight: bold ;
 }
