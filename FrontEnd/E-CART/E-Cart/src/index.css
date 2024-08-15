@@ -57,3 +57,7 @@ font-weight: bold ;
     align-items: center;
     gap: 4rem;
 }
+#detailImage{
+    border: 10px solid white;
+    border-radius: 15px 15px;
+}
