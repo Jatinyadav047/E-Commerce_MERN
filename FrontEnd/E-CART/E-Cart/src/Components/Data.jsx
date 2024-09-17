@@ -117,4 +117,5 @@ export const items = [
       "2 Function Keys 2.4GHz Wireless, 1000DPI, Spill-Resistant Design, PC/Mac, Black/Chartreuse Yellow",
     price: "1489",
   },
+  
 ];
