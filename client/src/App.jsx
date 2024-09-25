@@ -16,9 +16,9 @@ import Checkout from './components/Checkout'
 import OrderConfirmation from './components/OrderConfirmation'
 
 const App = () => {
-  // const {} = useContext(AppContext)
+   const {} = useContext(AppContext)
   return (
-    <Router>
+    <Router> 
       <Navbar />
       <ToastContainer />
       <Routes>
